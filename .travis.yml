@@ -1,10 +1,14 @@
 language: go
+
 go:
-  - master
+  - 1.14.x
+  - tip
+
 before_install:
-  - pyenv install 3.6.0
-  - pip install requests
+  - go get -t -v ./...
+
 script:
   - go test -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - python request.py
