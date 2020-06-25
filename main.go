@@ -1,5 +1,7 @@
 package goStandard
 
+import "fmt"
+
 func UncoveredIf(a bool) bool {
 	if a {
 		return false
@@ -13,4 +15,8 @@ func FullyCovered() bool {
 
 func Uncovered() bool {
 	return true
+}
+
+func moreUncovered() {
+	fmt.Print("asd")
 }
