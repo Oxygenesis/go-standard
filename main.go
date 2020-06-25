@@ -17,6 +17,10 @@ func Uncovered() bool {
 	return true
 }
 
-func Discovered() bool {
+func Discovered() {
 	fmt.Printf("test")
+}
+
+func main() {
+	fmt.Println("welcome to da jungle")
 }
