@@ -1,0 +1,16 @@
+on:
+  schedule:
+    # Run every day at 9 am.
+    - cron:  '35 23 * * *'
+name: Old Branch Reminder
+jobs:
+  remind:
+    name: Old Branch Reminder
+    runs-on: ubuntu-latest
+    steps:
+    - name: Old Branch Reminder
+      uses: arup-group/action-notify-unused-branches@v5
+      with:
+        daysOld: 3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
